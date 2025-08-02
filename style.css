@@ -1,0 +1,247 @@
+/* === Global Styles === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f2f6fc;
+  color: #333;
+}
+
+header {
+  background: #004080;
+  color: #fff;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+nav {
+  margin-top: 0.8rem;
+}
+
+nav a,
+nav button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background-color: #0059b3;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+nav a:hover,
+nav button:hover {
+  background-color: #0073e6;
+}
+
+/* === Main Layout === */
+main {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+h2 {
+  color: #004080;
+  margin-bottom: 1rem;
+}
+
+/* === Forms === */
+form {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #0073e6;
+  outline: none;
+}
+
+button[type="submit"],
+button {
+  width: fit-content;
+  background-color: #004080;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #0066cc;
+}
+
+/* === Events on Home Page === */
+.event-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.event-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+.event-card h3 {
+  margin-top: 0;
+  color: #004080;
+}
+
+.event-card a,
+.event-card button {
+  margin-top: 1rem;
+  display: inline-block;
+  background: #0073e6;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.event-card a:hover {
+  background: #005bb5;
+}
+
+/* === Table Styles === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #004080;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f6fc;
+}
+
+tr:hover {
+  background-color: #e8f0ff;
+}
+
+/* === Feedback Messages === */
+#successMessage,
+#loginError,
+#changePassMsg {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+#successMessage {
+  color: green;
+}
+
+#loginError,
+#changePassMsg.red {
+  color: red;
+}
+
+#changePassMsg.green {
+  color: green;
+}
+
+/* === Search Bar === */
+#searchInput {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 1rem auto 2rem;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+#searchInput:focus {
+  border-color: #0073e6;
+  outline: none;
+}
+#searchButton {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.6rem 1.2rem;
+  background-color: #004080;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+/* === Responsive === */
+@media screen and (max-width: 768px) {
+  .event-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .event-card {
+    width: 90%;
+  }
+}

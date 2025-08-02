@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register for Event</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Register for Event</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="admin-login.html">Admin</a>
+    </nav>
+  </header>
+
+  <main>
+    <form id="registrationForm">
+      <label>Full Name:
+        <input type="text" name="name" required>
+      </label>
+
+      <label>Email:
+        <input type="email" name="email" required>
+      </label>
+
+      <label>Event:
+        <input type="text" name="event" id="eventInput" readonly>
+      </label>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <div id="successMessage"></div>
+  </main>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("YOUR_USER_ID"); // replace with your EmailJS public key
+  })();
+</script>
+
+  <script src="script.js"></script>
+</body>
+</html>

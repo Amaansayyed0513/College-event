@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <button id="logoutBtn">Logout</button>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Add New Event</h2>
+      <form id="eventForm">
+        <label>Event Name:<input type="text" id="eventName" required /></label>
+        <label>Date:<input type="date" id="eventDate" required /></label>
+        <label>Location:<input type="text" id="eventLocation" required /></label>
+        <button type="submit">Add Event</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Current Events</h2>
+      <ul id="eventsAdminList"></ul>
+    </section>
+
+    <section>
+      <h2>Registrations</h2>
+      <table id="registrationsTable">
+        <thead>
+          <tr>
+            <th>Name</th><th>Email</th><th>Event</th><th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button id="exportCsvBtn">Export to CSV</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<section>
+  <h2>Change Admin Password</h2>
+  <form id="changePassForm">
+    <label>Current Password:<input type="password" id="currentPass" required /></label>
+    <label>New Password:<input type="password" id="newPass" required /></label>
+    <button type="submit">Change Password</button>
+    <div id="changePassMsg"></div>
+  </form>
+</section>
+
