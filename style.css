@@ -1,27 +1,45 @@
 /* === Global Styles === */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
-  background: #f2f6fc;
-  color: #333;
+  min-height: 100vh;
+  color: #e0e0e0;
+
+  /* 🔥 Animated Gradient Background */
+  background: linear-gradient(-45deg, #0f0f1a, #1a1a2e, #16213e, #0d1b2a);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
 }
 
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Header === */
 header {
-  background: #004080;
+  background: linear-gradient(90deg, #000428, #004e92);
   color: #fff;
   padding: 1.5rem 1rem;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 header h1 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(0, 198, 255, 0.6);
 }
 
+/* === Navigation === */
 nav {
   margin-top: 0.8rem;
 }
@@ -29,47 +47,124 @@ nav {
 nav a,
 nav button {
   margin: 0 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   color: #fff;
-  background-color: #0059b3;
+  background: rgba(255, 255, 255, 0.1);
   border: none;
-  border-radius: 4px;
+  border-radius: 25px;
   text-decoration: none;
   font-size: 0.95rem;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
+  backdrop-filter: blur(8px);
 }
 
 nav a:hover,
 nav button:hover {
-  background-color: #0073e6;
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
 }
 
-/* === Main Layout === */
-main {
-  padding: 2rem 1rem;
-  max-width: 900px;
-  margin: auto;
+/* === Section Card (Glass Effect) === */
+.section {
+  background: rgba(25, 25, 35, 0.7);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  backdrop-filter: blur(12px);
+  text-align: center;
 }
 
-h2 {
-  color: #004080;
+.section h2 {
+  color: #80e6ff;
   margin-bottom: 1rem;
+  font-size: 1.6rem;
+  text-shadow: 0 0 10px rgba(0,198,255,0.4);
+}
+.center-title {
+  text-align: center;
+
 }
 
-/* === Forms === */
-form {
-  background: #fff;
+/* === Event Cards (used also in Why Attend) === */
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.event-card,
+.why-attend .card {
+  background: rgba(30, 30, 45, 0.85);
+  border-radius: 16px;
   padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  margin-bottom: 2rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover,
+.why-attend .card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.9);
+}
+
+.event-card h3,
+.why-attend .card h3 {
+  margin: 0 0 0.5rem;
+  color: #00c6ff;
+}
+
+/* === Why Attend Section === */
+.why-attend {
+  background: rgba(20, 20, 30, 0.7);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: 2rem auto;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+  backdrop-filter: blur(12px);
+}
+
+.why-attend h2 {
+  color: #80e6ff;
+}
+
+/* === Testimonials === */
+.testimonials {
+  background: rgba(20, 20, 30, 0.7);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+  backdrop-filter: blur(12px);
+}
+
+.testimonials p {
+  font-style: italic;
+  margin-top: 1rem;
+  color: #e0e0e0;
+}
+
+/* === Forms (Login, Register, Dashboard) === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: rgba(20, 20, 30, 0.6);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
 }
 
 label {
-  display: block;
-  margin-bottom: 1rem;
-  font-weight: 500;
+  font-weight: 600;
+  color: #80e6ff;
+  text-align: left;
 }
 
 input[type="text"],
@@ -77,171 +172,231 @@ input[type="email"],
 input[type="password"],
 input[type="date"] {
   width: 100%;
-  padding: 0.75rem;
-  margin-top: 0.4rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  transition: border-color 0.3s;
+  padding: 0.8rem;
+  margin-top: 0.3rem;
+  background: #1f1f2e;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 input:focus {
-  border-color: #0073e6;
+  border-color: #00c6ff;
   outline: none;
+  box-shadow: 0 0 8px rgba(0,198,255,0.4);
 }
 
-button[type="submit"],
-button {
-  width: fit-content;
-  background-color: #004080;
+/* === Buttons (Global + Dashboard + Navbar Logout) === */
+button,
+.btn,
+#eventForm button,
+#changePassForm button,
+#exportCsvBtn,
+#logoutBtn {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
   color: white;
-  padding: 0.6rem 1.2rem;
+  padding: 0.7rem 1.5rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
   font-weight: 600;
-  transition: background 0.3s ease;
-}
-
-button:hover {
-  background-color: #0066cc;
-}
-
-/* === Events on Home Page === */
-.event-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-.event-card {
-  background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 1rem;
-  width: 250px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  transition: transform 0.2s;
-}
-
-.event-card:hover {
-  transform: translateY(-5px);
-}
-
-.event-card h3 {
-  margin-top: 0;
-  color: #004080;
-}
-
-.event-card a,
-.event-card button {
-  margin-top: 1rem;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
   display: inline-block;
-  background: #0073e6;
-  color: white;
-  padding: 0.5rem 1rem;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 0.9rem;
 }
 
-.event-card a:hover {
-  background: #005bb5;
+button:hover,
+.btn:hover,
+#eventForm button:hover,
+#changePassForm button:hover,
+#exportCsvBtn:hover,
+#logoutBtn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 15px rgba(0,198,255,0.6);
 }
 
-/* === Table Styles === */
+/* === Table (Admin Registrations) === */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  border-radius: 6px;
+  background: rgba(30, 30, 40, 0.9);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  border-radius: 12px;
   overflow: hidden;
+  color: #eee;
 }
 
 th, td {
-  padding: 0.75rem;
+  padding: 0.9rem;
   text-align: center;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #444;
 }
 
 th {
-  background-color: #004080;
-  color: white;
+  background: linear-gradient(90deg, #000428, #004e92);
+  color: #fff;
 }
 
 tr:nth-child(even) {
-  background-color: #f2f6fc;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
-tr:hover {
-  background-color: #e8f0ff;
-}
-
-/* === Feedback Messages === */
-#successMessage,
-#loginError,
-#changePassMsg {
-  text-align: center;
-  margin-top: 1rem;
-  font-weight: 500;
-}
-
-#successMessage {
-  color: green;
-}
-
-#loginError,
-#changePassMsg.red {
-  color: red;
-}
-
-#changePassMsg.green {
-  color: green;
-}
-
-/* === Search Bar === */
-#searchInput {
+/* === Search Bar (if used) === */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 1.5rem auto;
   width: 100%;
-  max-width: 400px;
-  display: block;
-  margin: 1rem auto 2rem;
-  padding: 0.6rem;
+  max-width: 600px;
+}
+
+#searchInput {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border: 1px solid #333;
+  border-radius: 25px;
+  background: #1f1f2e;
+  color: #fff;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+#searchBtn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
   transition: 0.3s;
 }
 
-#searchInput:focus {
-  border-color: #0073e6;
-  outline: none;
+#searchBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0,198,255,0.7);
 }
-#searchButton {
-  display: block;
-  width: fit-content;
-  margin: 0 auto;
-  padding: 0.6rem 1.2rem;
-  background-color: #004080;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s ease;
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ccc;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+  color: #80e6ff;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #fff;
 }
 
 /* === Responsive === */
 @media screen and (max-width: 768px) {
   .event-list {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
   }
 
-  .event-card {
-    width: 90%;
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+/* === Register Page Enhancements === */
+.register-section {
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: rgba(20, 20, 30, 0.7);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.8);
+  backdrop-filter: blur(12px);
+  animation: fadeInUp 1s ease;
+}
+
+.register-section h2 {
+  text-align: center;
+  color: #80e6ff;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-shadow: 0 0 12px rgba(0,198,255,0.6);
+}
+
+/* Labels */
+.register-section label {
+  font-weight: 600;
+  color: #80e6ff;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+/* Inputs */
+.register-section input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1rem;
+  background: rgba(30,30,45,0.9);
+  border: 1px solid #444;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.register-section input:focus {
+  border-color: #00c6ff;
+  outline: none;
+  box-shadow: 0 0 12px rgba(0,198,255,0.5);
+  transform: scale(1.02);
+}
+
+/* Button */
+.register-section button {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.register-section button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0,198,255,0.7);
+}
+
+/* Success Message */
+#successMessage {
+  margin-top: 1.2rem;
+  font-weight: 600;
+  color: #4dff88;
+  text-align: center;
+  text-shadow: 0 0 15px rgba(0,255,128,0.7);
+  display: none; /* JS shows it */
+}
+
+/* Smooth Fade-in */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
