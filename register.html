@@ -15,24 +15,24 @@
   </header>
 
   <main>
+  <section class="register-section">
+    <h2>Register for Event</h2>
     <form id="registrationForm">
-      <label>Full Name:
-        <input type="text" name="name" required>
-      </label>
+      <label>Full Name:</label>
+      <input type="text" name="name" required>
 
-      <label>Email:
-        <input type="email" name="email" required>
-      </label>
+      <label>Email:</label>
+      <input type="email" name="email" required>
 
-      <label>Event:
-        <input type="text" name="event" id="eventInput" readonly>
-      </label>
+      <label>Event:</label>
+      <input type="text" name="event" id="eventInput" readonly>
 
-      <button type="submit">Register</button>
+      <button type="submit">🚀 Register Now</button>
     </form>
+    <div id="successMessage">✅ Registration Successful!</div>
+  </section>
+</main>
 
-    <div id="successMessage"></div>
-  </main>
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
   (function(){
