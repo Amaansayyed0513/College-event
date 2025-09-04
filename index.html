@@ -12,16 +12,20 @@
       <a href="index.html">Home</a>
       <a href="register.html">Register</a>
       <a href="admin-login.html">Admin</a>
+     
     </nav>
   </header>
-<input type="text" id="searchInput" placeholder="Search events..." />
-<button id="searchButton">Search</button>
+  <div class="search-container">
+  <input type="text" id="searchInput" placeholder="Search events...">
+  <button id="searchBtn">Search</button>
   <script src="script.js"></script>
+  </div>
 </body>
 </html>
 
   <main>
-    <h2>Upcoming Events</h2>
+    <h2 class="center-title">Upcoming Events</h2>
+
     <div class="event-list" id="eventList">
       <div class="event-card">
         <h3>TechFest 2025</h3>
@@ -37,39 +41,40 @@
         <a href="register.html?event=Sports Meet">Register</a>
       </div>
     </div>
-     <!-- ✅ WHY ATTEND SECTION -->
-  <section style="padding: 2rem; background: #ffffff; text-align: center;">
-    <h2>Why Attend Our Events?</h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 1.5rem;">
-      <div class="event-card">
-        <h3>Learn & Grow</h3>
-        <p>Attend seminars and workshops to boost your skills.</p>
-      </div>
-      <div class="event-card">
-        <h3>Connect</h3>
-        <p>Meet like-minded peers and build your network.</p>
-      </div>
-      <div class="event-card">
-        <h3>Have Fun</h3>
-        <p>Enjoy cultural and fun activities beyond the classroom.</p>
-      </div>
+ <!-- ✅ WHY ATTEND SECTION -->
+<section class="why-attend">
+  <h2>Why Attend Our Events?</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Learn & Grow</h3>
+      <p>Attend seminars and workshops to boost your skills.</p>
     </div>
-  </section>
+    <div class="card">
+      <h3>Connect</h3>
+      <p>Meet like-minded peers and build your network.</p>
+    </div>
+    <div class="card">
+      <h3>Have Fun</h3>
+      <p>Enjoy cultural and fun activities beyond the classroom.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- ✅ TESTIMONIALS -->
-  <section style="padding: 2rem; background: #f2f6fc; text-align: center;">
-    <h2>What Students Say</h2>
-    <p style="font-style: italic; margin-top: 1rem;">"These events gave me unforgettable memories and connections!" – Priya S., 2nd Year</p>
-    <p style="font-style: italic;">"TechFest was a great learning experience. Can't wait for the next one!" – Rahul D., Final Year</p>
-  </section>
+<!-- ✅ TESTIMONIALS -->
+<section class="testimonials">
+  <h2>What Students Say</h2>
+  <p>"These events gave me unforgettable memories and connections!" – Priya S., 2nd Year</p>
+  <p>"TechFest was a great learning experience. Can't wait for the next one!" – Rahul D., Final Year</p>
+</section>
 
-  <!-- ✅ FOOTER -->
-  <footer style="background: #004080; color: #fff; padding: 1rem; text-align: center;">
-    <p>&copy; 2025 College Events Platform</p>
-    <p>Contact: info@collegeevents.edu | Follow us on 
-      <a href="#" style="color: #fff; text-decoration: underline;">Instagram</a>
-    </p>
-  </footer>
+<!-- ✅ FOOTER -->
+<footer>
+  <p>&copy; 2025 College Events Platform</p>
+  <p>Contact: info@collegeevents.edu | Follow us on 
+    <a href="#">Instagram</a>
+  </p>
+</footer>
+
 
   <script src="script.js"></script>
   </main>
